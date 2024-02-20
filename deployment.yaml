@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myweb1
+  name: myweb2
 spec:
   selector:
     matchLabels:
-      app: myweb1
+      app: myweb2
   replicas: 1
   template:
     metadata:
       labels:
-        app: myweb1
+        app: myweb2
     spec:
       containers:
-        - name: myweb1
+        - name: myweb2
           image: jeilbitna/cicdtest:blue
           ports:
             - containerPort: 80
@@ -22,7 +22,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: myweb1
+  name: myweb2
 spec:
   type: LoadBalancer
   ports:
@@ -30,4 +30,4 @@ spec:
       targetPort: 80
       protocol: TCP
   selector:
-    app: myweb1
+    app: myweb2
