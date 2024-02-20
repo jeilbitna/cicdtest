@@ -17,8 +17,8 @@ pipeline {
     stage('deploy kubernetes') {
       steps {
         sh '''
-        kubectl create deploy myweb3 --image=jeilbitna/cicdtest:blue
-        kubectl expose deploy myweb3 --type="LoadBalancer" --port=80 --target-port=80 --protocol="TCP"
+        ansible master -m command -a 'kubectl create deploy myweb3 --image=jeilbitna/cicdtest:blue'
+        ansible master -m command -a 'kubectl expose deploy myweb3 --type="LoadBalancer" --port=80 --target-port=80 --protocol="TCP"'
         '''
       }
     }
