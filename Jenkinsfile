@@ -9,8 +9,8 @@ pipeline {
     stage('docker build and push') {
       steps {
         sh '''
-        docker build -t jeilbitna/cicdtest:blue .
-        docker push jeilbitna/cicdtest:blue
+        sudo docker build -t jeilbitna/cicdtest:blue .
+        sudo docker push jeilbitna/cicdtest:blue
         '''
       }
     }
