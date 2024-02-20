@@ -17,5 +17,5 @@
         - deploy
 
   handlers:
-    - name: Deployment by kubectl apply
+    - name: deploy
       shell: kubectl apply -f /root/cicdtest/deployment.yaml
